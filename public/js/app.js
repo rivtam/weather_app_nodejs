@@ -10,7 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
     weatherOne.textContent = 'Please enter a city name or postal code';
   } else {
     weatherOne.textContent = 'Loading ...';
-    fetch(`http://localhost:3000/weather?address=${searchItem.value}`).then((response) => {
+    fetch(`/weather?address=${searchItem.value}`).then((response) => {
       response.json().then((data) => {
        if (data.error) {
          weatherOne.textContent = data.error;
